@@ -378,7 +378,7 @@ DASH_ENI_TABLE:{{eni}}
     "v4_meter_policy_id": {{string}} (OPTIONAL)
     "v6_meter_policy_id": {{string}} (OPTIONAL)
     "disable_fast_path_icmp_flow_redirection": {{bool}} (OPTIONAL)
-    "nic_mode": {{floating_nic_mode/vm_mode}} (OPTIONAL)
+    "mode": {{floating_nic_mode/vm_mode}} (OPTIONAL)
     "trusted_vni": {{vni list}} (OPTIONAL)
 ```
 ```
@@ -394,7 +394,7 @@ pl_underlay_sip          = Underlay SIP (ST GW VIP) to be used for all private l
 v4_meter_policy_id	     = IPv4 meter policy ID
 v6_meter_policy_id	     = IPv6 meter policy ID
 disable_fast_path_icmp_flow_redirection     = Disable handling fast path ICMP flow redirection packets
-nic_mode                     = floating nic mode or vm mode. Default is 'vm_mode'
+mode                     = floating nic mode or vm mode. Default is 'vm_mode'
 trusted_vni                  = list of trusted VNIs for this ENI, 'comma' seperated or "-" for range both inclusive. MSEE VNIs can added here
 ```
 
@@ -1670,7 +1670,7 @@ final_overlay_dip = (orig_packet_dip & ~overlay_dip_prefix.mask)
 	    "admin_state": "enabled",
 	    "vnet": "Vnet1",
             "pl_sip_encoding": "::cb3a:16e5:ff71:0:0/::ffff:ffff:ffff:0:0"
-	    "floating_nic_mode": "enabled",
+	    "mode": "floating_nic_mode",
 	    "trusted_vni": "1000"
         },
         "OP": "SET"
